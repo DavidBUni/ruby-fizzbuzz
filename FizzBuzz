@@ -1,0 +1,37 @@
+class FizzBuzz 
+  
+  def initialize(fizz: 3, buzz: 5)
+    @fizz = fizz
+    @buzz = buzz
+  end
+  
+  attr_reader :fizz, :buzz
+  
+  def run(i)  
+    value = ''
+    value += when_fizz(i)
+    value += when_buzz(i)
+    value += "#{i}" if value.empty?
+
+    puts value 
+  end
+   
+   private 
+   
+  def when_fizz(i)
+    return 'fizz' if (i%fizz).zero?
+          
+    ''
+  end
+    
+  def when_buzz(i)
+    return 'buzz' if (i%buzz).zero?
+      
+    ''
+  end
+end
+  
+  fb = FizzBuzz.new(fizz:2, buzz:7)
+  1.upto(100) do |i|
+    fb.run(i)
+  end
